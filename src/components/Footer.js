@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props) => (
+export default React.memo((props) => (
   <footer className="footer">
     <span className="todo-count">
       <strong>{props.remaining}</strong>
@@ -20,4 +20,4 @@ export default (props) => (
       </li>
     </ul>
   </footer>
-);
+));

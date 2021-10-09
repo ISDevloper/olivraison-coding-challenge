@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoItem = (props) => (
+const TodoItem = React.memo((props) => (
   <li className={props.isComplete ? "completed" : null}>
     <div className="view">
       <input
@@ -16,10 +16,10 @@ const TodoItem = (props) => (
       />
     </div>
   </li>
-);
+));
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props) => (
+export default React.memo((props) => (
   <ul className="todo-list">
     {props.todos.map((todo) => (
       <TodoItem
@@ -30,4 +30,4 @@ export default (props) => (
       />
     ))}
   </ul>
-);
+));

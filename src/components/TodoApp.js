@@ -9,7 +9,6 @@ import { filterTodos } from "../lib/utils";
 export default class TodoApp extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       currentTodo: "",
       todos: [],

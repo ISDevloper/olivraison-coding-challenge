@@ -1,7 +1,7 @@
 import React from "react";
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default (props) => (
+export default React.memo((props) => (
   <form onSubmit={props.handleTodoSubmit}>
     <input
       type="text"
@@ -12,4 +12,4 @@ export default (props) => (
       placeholder="What needs to be done?"
     />
   </form>
-);
+));

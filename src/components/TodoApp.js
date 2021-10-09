@@ -12,7 +12,7 @@ export default class TodoApp extends Component {
 
     this.state = {
       currentTodo: "",
-      todos: {},
+      todos: [],
     };
     this.handleNewTodoChange = this.handleNewTodoChange.bind(this);
     this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
@@ -53,6 +53,12 @@ export default class TodoApp extends Component {
   handleTodoSubmit(evt) {
     evt.preventDefault();
     const newTodo = { name: this.state.currentTodo, isComplete: false };
+    this.setState({ currentTodo: "" });
+    saveTodo(newTodo).then((data) => {
+      this.setState((prevTodosState) => ({
+        todos: [data.data, ...prevTodosState.todos],
+      }));
+    });
   }
 
   render() {
